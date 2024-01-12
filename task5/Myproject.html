@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link rel="stylesheet" href="assets/css/myproject.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/content_myproject.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <script src="https://kit.fontawesome.com/7e6368bcc1.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <ul class="navbar-ul" >
+            <div class="navbar-div " >
+                <li>
+                    <img src="assets/img/brandred.png" class="navbar-logo"/>
+                </li>
+                <li>
+                    <a href="index.html" class="navbar-link" > Home</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="Myproject.html" class="navbar-link"> My Project</a>
+                </li>
+            </div>
+            <div>
+                <li>
+                    <a href="contact.html" class="navbar-contact-btn"> Contact Me </a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <!-- navbar  -->
+
+    <!-- content My Project -->
+    <div class="content">
+        <div class="container-form">
+            <h2 class="judul">ADD MY PROJECT</h2>
+
+            <form class="form-group" action="" onsubmit="addBlog(event)">
+                <label class="label-style" for="ProjectName">Project Name</label>
+                <input class="input-style" id="projectName" name="" value=""/>
+
+                <div class="group-date">
+                    <div class="start-date">
+                      <label for="">Start date</label>
+                        <input type="date" id="start-date">
+                    </div>
+                    <div class="end-date">
+                        <label for="">End date</label>
+                        <input type="date" id="end-date">
+                    </div>
+                </div>
+                
+                <label class="label-style" for="description" >Description</label>
+                <textarea name="" id="description" cols="30 " rows="8"></textarea>
+    
+                <label class="label-style">Technologies</label>
+         
+                <div class="row-tech">
+                    <div class="col-1">
+                        <input type="checkbox" id="mycheckbox1">
+                        <label for="">Node Js</label><br><br>
+                        <input type="checkbox" id="mycheckbox2">
+                        <label for="">React Js</label>
+                    </div>
+
+                    <div class="col-2">
+                        <input type="checkbox" id="mycheckbox3">
+                        <label for="">Vue Js</label><br><br>
+                        <input type="checkbox" id="mycheckbox4">
+                        <label for="">JavaScripts</label>
+                    </div>
+                </div>
+            
+                <div class="file-image-group">
+                    <label for="">Upload File image</label>
+                    <div class="image-group-2">
+                    <label for="inputImage">
+                        <p>Choose</p>
+                        <img src="assets/img/clip.png"  alt="" />
+                    </label>
+                    <input type="file" id="inputImage" hidden />
+                    </div>
+                </div>
+                    <button  class="btn-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- content My Project -->
+     <div class="container-div"id="container">
+        <h1 class="title-blog">MY PROJECT</h1>
+         <div class="flex" id="content">
+            <!-- <div class="card" >
+                <img src="assets/img/tips-foto-aesthetics-2.png" alt="blog">
+                <a href="detail-project.html" target="_blank"><p class="title">Dumbways Mobile App - 2021</p></a>
+                <p>durasi : 3 bulan</p>
+                <p class="about">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim, earum.</p>
+                <p>
+                   <i class="fa-brands fa-node-js"></i>
+                   <i class="fa-brands fa-html5"></i>
+                   <i class="fa-brands fa-php"></i>
+                   <i class="fa-brands fa-react"></i>
+                </p>
+                <div class="button">
+                   <button class="btn-edit">edit</button>
+                   <button class="btn-delete">delete</button>
+                </div>  
+             </div>
+
+        </div>
+     </div>  -->
+     
+
+    <script src="assets/js/project.js"></script>
+    <script src="assets/js/contact.js"></script>
+    
+</body>
+</html>
