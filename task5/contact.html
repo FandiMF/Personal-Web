@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <link rel="stylesheet" href="assets/css/nav.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="navbar-ul" >
+            <div class="navbar-div " >
+                <li>
+                    <img src="assets/img/brandred.png" class="navbar-logo"/>
+                </li>
+                <li>
+                    <a href="index.html" class="navbar-link" > Home</a>
+                </li>
+                <li class="navbar-link">
+                    <a href="Myproject.html" class="navbar-link"> My Project</a>
+                </li>
+            </div>
+            <div>
+                <li>
+                    <a href="contact.html" class="navbar-contact-btn"> Contact Me </a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="contact-div" >
+        <form class="contact-form" onsubmit="submitData(event)">
+            <h2 class="judul">GET IN TOUCH</h2>
+            <label class="label-style" for="name">Name</label>
+            <input class="input-style" id="name" />
+            <label class="label-style" for="email">Email</label>
+            <input class="input-style" id="email" />
+            <label class="label-style" for="phoneNumber">Phone Number</label>
+            <input class="input-style" id="phoneNumber" />
+            <label class="label-style" for="subject">Subject</label>
+            <select class="input-style" id="subject">
+                <option>Frontend Developer</option>
+                <option>Backend Developer</option>
+                <option>Fullstack Developer</option>
+            </select>
+            <label class="label-style" for="message">Your message</label>
+            <textarea class="input-style" id="message"></textarea>
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="assets/js/contact.js">
+
+    </script>
+</body>
+</html>
