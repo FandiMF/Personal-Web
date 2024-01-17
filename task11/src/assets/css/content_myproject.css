@@ -1,0 +1,70 @@
+.container {
+    width: 70%;
+    margin:  30px auto;
+ }
+ 
+ .title-blog {
+    margin-top: 150px;
+ }
+ 
+ .flex {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 30px;
+ }
+ 
+ .card {
+    width: 300px;
+    margin-right: 50px;
+    padding: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+ }
+ 
+ .card img {
+    width: 100%;
+ }
+ 
+ .card .title {
+    font-weight: bold;
+ }
+ 
+ .card .about {
+    margin: 10px 0;
+ }
+ 
+ .card .fa-brands {
+    font-size: 30px;
+    margin-right: 10px;
+ }
+ 
+ .card .button {
+    display: flex;
+ }
+ 
+ .card .button button {
+    padding: 5px 10px ;
+    margin-right: 10px;
+    margin-top: 10px;
+ }
+
+.sec-project-view {
+   padding: 40px;
+   background-color: #fff;
+ }
+.sec-project-view .container {
+   margin: 0px 60px;
+ }
+.tittle-section {
+   margin-top: 20px;
+   text-align: center;
+ }
+.row-card {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   margin: 10px auto;
+ }
+ 
+ 
