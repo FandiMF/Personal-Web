@@ -1,4 +1,4 @@
-
+// NGODING AJA DULU, JAGONYA BELAKANGAN!!!
 function getTestimonialData (){
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest()
@@ -34,9 +34,11 @@ async function allTestimonial(){
     let testimonialHtml = ""
 
     testimonials.forEach((value) => {
-        testimonialHtml += `<div class="card-project">
+        testimonialHtml += `
+        <div class="col-lg-3 m-1">
+            <div class="card-project  shadow">
                                 <div class="col-card-img">
-                                    <img src="${value.image}" alt="foto" />
+                                    <img class="img-fluid" src="${value.image}" alt="foto" />
                                 </div>
                                 <div class="col-card-2">
                                     <div class="card-text">
@@ -45,6 +47,8 @@ async function allTestimonial(){
                                 
                                     <div class="card-text-author">
                                     <p class="author-name">${value.author}</p>
+                                    <p class="rating">${value.rating}</p>
+                                    </div>
                                     </div>
                                 </div>
                             </div>`       
@@ -68,21 +72,25 @@ async function  filterTestimonial(rating) {
         let filteredTestimonialHTML = ""
 
         filteredTestimonial.forEach((value) => {
-            filteredTestimonialHTML += `<div class="card-project">
-            <div class="col-card-img">
-                <img src="${value.image}" alt="foto" />
-            </div>
-            <div class="col-card-2">
-                <div class="card-text">
-                <p class="text-review"><i>"${value.review}"</i></p>
-                </div>
-            
-                <div class="card-text-author">
-                <p class="author-name">${value.author}</p>
-                <p class="author-name">${value.rating}</p>
-                </div>
-            </div>
-        </div>`
+            filteredTestimonialHTML += ` <div class="col-lg-3 m-1">
+            <div class="card-project  shadow">
+                                <div class="col-card-img">
+                                    <img class="img-fluid" src="${value.image}" alt="foto" />
+                                </div>
+                                <div class="col-card-2">
+                                    <div class="card-text">
+                                        <p class="text-review"><i>"${value.review}"</i></p>
+                                    </div>
+                                
+                                    <div class="card-text-author">
+                                        <p class="author-name">${value.author}</p>
+                                    </div>
+                                    <div>
+                                        <p class="rating">${value.rating}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>`
         })
       
        

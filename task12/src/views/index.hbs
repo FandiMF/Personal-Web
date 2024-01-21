@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home  {{tittleTab}} </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com"/> 
     <script src="https://kit.fontawesome.com/7e6368bcc1.js" crossorigin="anonymous"></script> 
@@ -21,17 +21,17 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="test.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Myproject.html">Add Project</a>
+                <a class="nav-link" href="/project">Add Project</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="testimonial.html">Testimonial</a>
+                <a class="nav-link" href="/testimonial">Testimonial</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <a type="button" class="btn btn-dark" href="contact.html">Contact Me</a>
+              <a type="submit" class="btn btn-dark" href="/contact-me" >Contact Me</a>
             </form>
           </div>
         </div>
@@ -118,5 +118,60 @@
           </div>
         </div>
       </div>
+
+      <section class="content-result-project bg-light pt-5 pb-5">
+        <div class="container mt-5">
+          <h3 class="text-center fw-bold pb-5">MY PROJECT</h3>
+
+          {{!-- menambahkan data dari javascript --}}
+          <div class="row" id="content">
+            {{#each data}}
+              <div class="col-lg-4 mt-4">
+              <!-- Card -->
+              <div class="card border-0 shadow">
+                <img
+                  src="../assets/img/tips-foto-aesthetics-2.png"
+                  class="card-img-top"
+                  height="300"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">
+                    <a
+                      href="/detailProject/{{this.id}}"
+                      target="_blank"
+                      class="text-dark text-decoration-none"
+                    >{{this.projectName}}</a>
+                  </h5>
+                  <small class="text-secondary">
+                    <i class="fa-regular fa-clock"></i>
+                    {{this.timeproject}}
+                  </small>
+                  <p class="text-paraf mt-2">
+                    {{this.description}}
+                  </p>
+                  <div class="ikon mt-4 mb-4">
+
+                    {{#each this.tech}}
+
+                    <i class="fa-brands {{this}} fa-2xl"></i>
+
+                    {{/each}}
+                  </div>
+                  <div class="btn-bottom d-flex justify-content-center mb-2">
+                    <a href="/reproject/{{@index}}" class="btn btn-dark me-1 p-0 w-50">Edit</a><a
+                      href="/delete/{{@index}}"
+                      class="btn btn-dark p-0 w-50"
+                    >Delete</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Close Card -->
+            </div>
+          {{/each}}
+          </div>
+        </div>
+      </section>
+
 </body>
 </html>

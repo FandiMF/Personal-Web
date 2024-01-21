@@ -1,0 +1,22 @@
+
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+}
+
+.contact-div{
+    display: flex ;
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.judul{
+    font-family: 'poppins', sans-serif;
+    text-align: center;
+}
+
