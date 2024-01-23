@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project {{tittleTab}} </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/7e6368bcc1.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+        <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/brandred.png" alt="logo" style="width: 50px;">
+                </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/project">Add Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/testimonial">Testimonial</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <a type="button" class="btn btn-dark" href="/contact-me">Contact Me</a>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- navbar  -->
+
+    <!-- content My Project -->
+    <div class="me-3 ms-3 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 mt-3">
+            <h1 class="text-center fw-bold mt-5 mb-4 pb-4">ADD MY PROJECT</h1>
+            <form action="/project" method="POST" >
+              <!-- Input Name -->
+              <div class="">
+                <label for="ProjectName" class="form-label fw-medium"
+                  >Project Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control shadow"
+                  id="projectName"
+                  name="projectName"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+  
+              <!-- Input Date -->
+              <div class="mb-3 row">
+                <div class="col-lg-6 col-sm-12 mt-3">
+                  <label for="start-date" class="form-label fw-medium"
+                    >Start Date</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control shadow"
+                    id="start-date"
+                    name="startDate"
+                  />
+                </div>
+  
+                <div class="col-lg-6 col-sm-12 mt-3">
+                  <label for="end-date" class="form-label fw-medium"
+                    >End Date</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control shadow"
+                    id="end-date"
+                    name="endDate"
+                  />
+                </div>
+              </div>
+  
+              <!-- Input Description -->
+              <div class="mb-3">
+                <label for="description" class="form-label fw-medium"
+                  >Description</label
+                >
+                <textarea
+                  type="text"
+                  class="form-control shadow"
+                  id="description"
+                  name="description"
+                  rows="8"
+                ></textarea>
+              </div>
+  
+              <!-- Input Checbox Technologies -->
+              <div class="mb-3">
+                <label for="" class="form-label fw-medium">Technologies</label>
+                <div class="row">
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="mb-3 form-check d-flex align-items-center">
+                      <input
+                        type="checkbox"
+                        class="form-check-input shadow"
+                        id="mycheckbox1"
+                        name="tech"
+                        value="react"
+                      />
+                      <label
+                        class="form-check-label text-secondary ms-2"
+                        for="mycheckbox1"
+                        >React Js</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="mb-3 form-check d-flex align-items-center">
+                      <input
+                        type="checkbox"
+                        class="form-check-input shadow"
+                        id="mycheckbox2"
+                        name="tech"
+                        value="vuejs"
+                      />
+                      <label
+                        class="form-check-label ms-2 text-secondary"
+                        for="mycheckbox2"
+                        >Vue Js</label
+                      >
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="mb-3 form-check d-flex align-items-center">
+                      <input
+                        type="checkbox"
+                        class="form-check-input shadow"
+                        id="mycheckbox3"
+                        name="tech"
+                        value="node-js"
+                      />
+                      <label
+                        class="form-check-label ms-2 text-secondary"
+                        for="mycheckbox3"
+                        >Node Js</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6">
+                    <div class="mb-3 form-check d-flex align-items-center">
+                      <input
+                        type="checkbox"
+                        class="form-check-input shadow"
+                        id="mycheckbox4"
+                        name="tech"
+                        value="square-js"
+                      />
+                      <label
+                        class="form-check-label ms-2 text-secondary"
+                        for="mycheckbox4"
+                        >Javacript</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="content-upload">
+                <label class="fw-medium">Upload Image</label>
+                <div
+                  class="input-blog-image-group w-100 bg-white mt-2 rounded pe-1 shadow"
+                >
+                  <label
+                    {{!-- for="inputImage" --}}
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <p class="pt-10 text-center rounded text-secondary " pt-10>Choose</p>
+                    <img
+                      src="../assets/img/clip (1).png"
+                      class="me-1 mb-3"
+                      alt="file"
+                    />
+                  </label>
+                  <input type="file" id="inputImage" hidden />
+                </div>
+              </div>
+  
+              <!-- Button Submit -->
+              <div class="text-end mt-5">
+                <button
+                  type="submit"
+                  class="btn btn-dark btn-submit rounded-5 pe-4 ps-4 text-end"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    
+</body>
+</html>
+

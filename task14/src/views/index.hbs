@@ -1,0 +1,187 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home {{tittleTab}} </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script
+      src="https://kit.fontawesome.com/7e6368bcc1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+  </head>
+  <body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/brandred.png" alt="logo" style="width: 50px;" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/project">Add Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/testimonial">Testimonial</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <a type="submit" class="btn btn-dark" href="/contact-me">Contact Me</a>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- navigation bar  -->
+
+    <!-- content/home  -->
+    <div class="container bg-container rounded-4 shadow">
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-7 mt-5 pt-lg-5 ps-lg-5 p-sm-4">
+          <h1 class="fw-bold fs-2">Welcome to My Personal Website</h1>
+          <p class="lh-md paraf mt-4 fs-6">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Necessitatibus ut architecto eos accusantium error consectetur nam,
+            perferendis ea? Possimus dignissimos vel quod culpa architecto
+            placeat iste perferendis ullam aperiam distinctio.
+          </p>
+          <div class="container-btnlink mt-lg-5 mt-sm-4">
+            <a
+              href="https://api.whatsapp.com/send?phone=6285171152099&text=Halo,%20Saya%20ingin%20membuat%20Project%20dengan%20anda"
+              target="_blank"
+              class="btn btn-contact pt-2 pb-2 pe-4 ps-4 bg-dark text-light rounded-pill me-4"
+              type="submit"
+            >Contact</a>
+
+            <a
+              href="#"
+              target="_blank"
+              class="fs-6 pe-5 text-decoration-none text-dark"
+            >Download CV <img src="assets/img/download.png" alt="" /></a>
+          </div>
+
+          <div class="ikon mt-5 pt-10 text-lg-start text-sm-center">
+            <a
+              class="text-decoration-none"
+              href="https://www.linkedin.com"
+              target="_blank"
+            >
+              <img
+                class="rounded-5"
+                src="assets/img/linkedin.png"
+                alt="Linked In picture"
+              />
+            </a>
+            <a
+              class="text-decoration-none"
+              href="https://www.instagram.com/_mmahdii/"
+              target="_blank"
+            >
+              <img
+                class="rounded-5"
+                src="assets/img/instagram.png"
+                alt="Instagram In picture"
+              />
+            </a>
+            <a class="text-decoration-none" href="#">
+              <img
+                class="rounded-5"
+                src="assets/img/facebook1.png"
+                alt="Facebook In picture"
+              />
+            </a>
+            <a class="text-decoration-none" href="#">
+              <img
+                class="rounded-5"
+                src="assets/img/twitter-x (1).png"
+                alt="Twitter In picture"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 mt-3 mb-3 p-lg-5 p-sm-4 pb-sm-5 m-auto">
+          <div class="card shadow-lg border-0">
+            <img src="assets/img/4x6.jpg" class="card-img-top" alt="..." />
+            <div class="card-body text-center mb-2 lh-1">
+              <h4 class="card-title fw-bold fs-4">Fandi Muhammad Fajar</h4>
+              <small class="fs-6">Fullstak Developer</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="content-result-project bg-light pt-5 pb-5">
+      <div class="container mt-5">
+        <h3 class="text-center fw-bold pb-5">MY PROJECT</h3>
+
+        {{! menambahkan data dari javascript }}
+        <div class="row" id="content">
+          {{#each data}}
+            <div class="col-lg-4 mt-4">
+              <!-- Card -->
+              <div class="card border-0 shadow">
+                <img
+                  src="../assets/img/tips-foto-aesthetics-2.png"
+                  class="card-img-top"
+                  height="300"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">
+                    <a
+                      href="/detailProject/{{this.id}}"
+                      target="_blank"
+                      class="text-dark text-decoration-none"
+                    >{{this.name}}</a>
+                  </h5>
+                  <small class="text-secondary">
+                    <i class="fa-regular fa-clock"></i>
+                    {{this.timeproject}}
+                  </small>
+                  <p class="text-paraf mt-2">
+                    {{this.description}}
+                  </p>
+                  <div class="ikon mt-4 mb-4">
+
+                    {{#each this.technologies}}
+
+                      <i class="fa-brands fa-{{this}} fa-2xl"></i>
+
+                    {{/each}}
+                  </div>
+                  <div class="btn-bottom d-flex justify-content-center mb-2">
+                    <a
+                      href="/reproject/{{id}}"
+                      class="btn btn-dark me-1 p-0 w-50"
+                    >Edit</a><a
+                      href="/delete/{{id}}"
+                      class="btn btn-dark p-0 w-50"
+                    >Delete</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Close Card -->
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
