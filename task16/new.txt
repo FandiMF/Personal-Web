@@ -1,0 +1,33 @@
+    let start = new Date(startDate);
+    let end = new Date(endDate);
+
+    let diff = end.getTime() - start.getTime();
+    let days = diff / ((1000 * 3600 * 24));
+    let months = Math.floor (days / 30);
+    let monthsdays = days  % 30;
+    let years = Math.floor (days / 365);
+    let yearsdays = days % 365;
+
+    let timeproject = "";
+
+    if (diff < 0) {
+        return alert("End Date must be after Start Date!");
+    }
+
+    if (days <= 6){
+        timeproject = `${days} Hari`
+    }else if (years > 0){
+        if (years > 0){
+            timeproject = `${years} Tahun ${Math.floor(yearsdays / 30)} Bulan ${Math.floor(yearsdays % 30)} Hari`
+        }else{
+            timeproject = `${years} Tahun`
+        }
+    }else if (months > 0){
+        if (months > 0){    
+            timeproject = `${months} Bulan ${monthsdays} Hari`
+        }else{
+            timeproject = `${months} Bulan`
+        }
+    }else if (days > 0){
+        timeproject = `${days} Hari`
+    }

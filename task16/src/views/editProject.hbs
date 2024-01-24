@@ -1,0 +1,266 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal Web  {{tittleTab}}</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/fav-mylogo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <!-- Cdn Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <!-- Cdn Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+   <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary px-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/img/brandred.png" alt="logo" style="width: 50px;" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="/home">Home</a>
+            </li>
+            {{#if isLogin}}
+              <li class="nav-item">
+                <a class="nav-link" href="/project">Add Project</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/testimonial">Testimonial</a>
+              </li>
+            {{/if}}
+          </ul>
+          
+       <form class="d-flex" role="">
+             {{#if isLogin}}
+          <div class="d-flex justift-content-end">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-4">
+                <a class="nav-link " >Hello {{user}}</a>
+              </li>
+              <li class="nav-item ms-2">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        {{else}}
+          <div class="d-flex justift-content-end">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item me-4">
+                <a class="nav-link " href="/register">Register</a>
+              </li>
+              <li class="nav-item ms-2">
+                <a class="nav-link " href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+        {{/if}}
+          </form>
+        <form class="d-flex" role="search">
+          <a type="submit" class="btn btn-dark ms-5" href="/contact-me">Contact Me</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- navigation bar  -->
+  
+
+    <!-- Content -->
+    <div class="me-3 ms-3 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 mt-3">
+          <h1 class="text-center fw-bold mt-5 mb-4 pb-4">UPDATE PROJECT</h1>
+          <form method="POST" action="/reproject/{{data.id}}" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{data.id}}" />
+            <!-- Input Name -->
+            <div class="">
+              <label for="projectName" class="form-label fw-medium">Project Name</label>
+              <input
+                type="text"
+                class="form-control shadow"
+                id="inputTittle"
+                name="projectName"
+                value="{{data.projectName}}"
+                aria-describedby="emailHelp"
+              />
+            </div>
+
+            <!-- Input Date -->
+            <div class="mb-3 row">
+              <div class="col-lg-6 col-sm-12 mt-3">
+                <label for="inputStartDate" class="form-label fw-medium">Start
+                  Date</label>
+                <input
+                  type="date"
+                  class="form-control shadow"
+                  id="inputStartDate"
+                  name="startDate"
+                  value="{{data.startDate}}"
+                />
+              </div>
+
+              <div class="col-lg-6 col-sm-12 mt-3">
+                <label for="inputEndDate" class="form-label fw-medium">End Date</label>
+                <input
+                  type="date"
+                  class="form-control shadow"
+                  id="inputEndDate"
+                  name="endDate"
+                  value="{{data.endDate}}"
+                />
+              </div>
+            </div>
+
+            <!-- Input Description -->
+            <div class="mb-3">
+              <label
+                for="description"
+                class="form-label fw-medium"
+              >Description</label>
+              <textarea
+                type="text"
+                class="form-control shadow"
+                id="description"
+                name="description"
+                rows="8"
+              >{{data.description}}</textarea>
+            </div>
+
+            <!-- Input Checbox Technologies -->
+            <div class="mb-3">
+              <label for="" class="form-label fw-medium">Technologies</label>
+              <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                  <div class="mb-3 form-check d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      class="form-check-input shadow"
+                      id="inputReact"
+                      name="tech"
+                      value="react"
+                    />
+                    <label
+                      class="form-check-label text-secondary ms-2"
+                      for="inputReact"
+                    >React Js</label>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                  <div class="mb-3 form-check d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      class="form-check-input shadow"
+                      id="inputVue"
+                      name="tech"
+                      value="vuejs"
+                    />
+                    <label
+                      class="form-check-label ms-2 text-secondary"
+                      for="inputVue"
+                    >Vue Js</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 col-sm-6">
+                  <div class="mb-3 form-check d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      class="form-check-input shadow"
+                      id="inputNode"
+                      name="tech"
+                      value="node-js"
+                    />
+                    <label
+                      class="form-check-label ms-2 text-secondary"
+                      for="inputNode"
+                    >Node Js</label>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                  <div class="mb-3 form-check d-flex align-items-center">
+                    <input
+                      type="checkbox"
+                      class="form-check-input shadow"
+                      id="inputJs"
+                      name="tech"
+                      value="square-js"
+                    />
+                    <label
+                      class="form-check-label ms-2 text-secondary"
+                      for="inputJs"
+                    >Javacript</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-upload">
+              <label class="fw-medium">Upload Image</label>
+              <div
+                class="input-blog-image-group w-100 bg-white mt-2 rounded pe-1 shadow"
+              >
+                <label
+                  for="inputImage"
+                  class="d-flex justify-content-between align-items-center"
+                >
+                  <p class="text-center rounded text-secondary">Choose</p>
+                  <img
+                    src="../assets/img/clip (1).png"
+                    class="me-1 mb-3"
+                    alt="file"
+                  />
+                </label>
+                <input type="file" id="inputImage" name="image" hidden />
+              </div>
+            </div>
+
+            <!-- Button Submit -->
+            <div class="text-end mt-5">
+              <button
+                type="submit"
+                class="btn btn-dark btn-submit rounded-5 pe-4 ps-4 text-end"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const selectedTechs = "{{data.tech}}"; const reactBox =
+      document.getElementById("inputReact"); const vueBox =
+      document.getElementById("inputVue"); const nodeBox =
+      document.getElementById("inputNode"); const jsBox =
+      document.getElementById("inputJs"); reactBox.checked =
+      selectedTechs.includes("fa-react"); vueBox.checked =
+      selectedTechs.includes("fa-vuejs"); nodeBox.checked =
+      selectedTechs.includes("fa-node-js"); jsBox.checked =
+      selectedTechs.includes("fa-square-js");
+
+    </script>
+  </body>
+</html>
